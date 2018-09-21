@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: #ffffff;
+    font-family: sans-serif;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
