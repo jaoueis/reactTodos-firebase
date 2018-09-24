@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./todoList";
 
-var destination = document.querySelector("#container")
+var destination = document.querySelector("#container");
 
-ReactDOM.render(
-    <App />, destination
-);
+ReactDOM.render(<App />, destination);
