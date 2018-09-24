@@ -1,4 +1,4 @@
-# todoList
+# React todoList
 
 ##### Run
 `npm run start` to preview project
