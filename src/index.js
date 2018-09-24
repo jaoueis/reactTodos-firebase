@@ -6,8 +6,5 @@ import App from "./todoList";
 var destination = document.querySelector("#container")
 
 ReactDOM.render(
-    <div>
-        <App />
-    </div>,
-    destination
+    <App />, destination
 );

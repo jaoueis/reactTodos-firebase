@@ -3,21 +3,44 @@ import React from "react";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { items: [], text: '' };
+    this.state = { items: [], text: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   render() {
     return (
-      <div className='todoListMain'>
-        <div className='header'>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="Enter new task here..." id="new-todo" value={this.state.text} onChange={this.handleChange} />
-            <button type="submit">Add Task #{this.state.items.length + 1}</button>
-          </form>
+      <div className="todoListMain row">
+        <div className="header col-12 col-lg-1 text-center p-3">
+          <h1>
+            <i className="fab fa-react" /> React Todo List
+          </h1>
         </div>
-        <TodoList items={this.state.items} />
+        <div className="add col-12 col-md-5 p-3 bg-light">
+          <div className="form-wrap p-3 shadow-sm">
+            <h2>Add Your Todos</h2>
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  placeholder="Enter new task here..."
+                  id="new-todo"
+                  value={this.state.text}
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+              </div>
+              <button type="submit" className="btn btn-dark">
+                Add Task #{this.state.items.length + 1}
+              </button>
+            </form>
+          </div>
+          <div className="list-wrap mt-3 p-3 shadow-sm">
+            <h2>Your Todo List</h2>
+            <TodoList items={this.state.items} />
+          </div>
+        </div>
+        <div className="list col-12 col-md-6 p-3" />
       </div>
     );
   }
@@ -37,7 +60,7 @@ class App extends React.Component {
       };
       this.setState(state => ({
         items: state.items.concat(newItem),
-        text: ''
+        text: ""
       }));
     }
   }
@@ -46,13 +69,19 @@ class App extends React.Component {
 class TodoList extends React.Component {
   render() {
     return (
-      <ol>
+      <ul className="list-group list-group-flush">
         {this.props.items.map(item => (
-          <li key={item.id}>{item.text}</li>
+          <li
+            key={item.id}
+            className="list-group-item d-flex justify-content-between align-items-center"
+          >
+            {item.text}
+            <span className="badge badge-primary badge-pill">{item.id}</span>
+          </li>
         ))}
-      </ol>
+      </ul>
     );
   }
 }
 
-export default App
+export default App;
