@@ -1,4 +1,5 @@
 import React from "react";
+import firebase from "./firebase";
 
 class App extends React.Component {
   constructor(props) {
@@ -54,10 +55,12 @@ class App extends React.Component {
     if (!this.state.text.length) {
       return;
     } else {
+      const itemsRef = firebase.database().ref('items');
       const newItem = {
         text: this.state.text,
         id: Date.now()
       };
+      itemsRef.push(newItem);
       this.setState(state => ({
         items: state.items.concat(newItem),
         text: ""

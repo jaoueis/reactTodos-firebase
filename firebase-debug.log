@@ -1,0 +1,24 @@
+[debug] [2018-09-25T15:49:35.975Z] ----------------------------------------------------------------------
+[debug] [2018-09-25T15:49:35.977Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Shan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-25T15:49:35.977Z] CLI Version:   4.2.1
+[debug] [2018-09-25T15:49:35.977Z] Platform:      win32
+[debug] [2018-09-25T15:49:35.977Z] Node Version:  v8.11.3
+[debug] [2018-09-25T15:49:35.978Z] Time:          Tue Sep 25 2018 11:49:35 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-25T15:49:35.978Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-25T15:49:35.986Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-25T15:49:35.986Z] > authorizing via signed-in user
+[debug] [2018-09-25T15:49:35.988Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/react-todo-list-38fd1  
+ 
+[debug] [2018-09-25T15:49:36.322Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-25T15:49:36.322Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/react-todo-list-38fd1  
+ 
+[debug] [2018-09-25T15:49:36.628Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Shan\Desktop\to-do-list'...
+[info] 
+[debug] [2018-09-25T15:49:36.630Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/667715307593/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-25T15:49:36.940Z] <<< HTTP RESPONSE 200
+[info] i  hosting[react-todo-list-38fd1]: Serving hosting files from: build
+[info] +  hosting[react-todo-list-38fd1]: Local server: http://localhost:5000
