@@ -55,7 +55,7 @@ class App extends React.Component {
     if (!this.state.text.length) {
       return;
     } else {
-      const itemsRef = firebase.database().ref('items');
+      const itemsRef = firebase.database().ref("items");
       const newItem = {
         text: this.state.text,
         id: Date.now()
@@ -78,7 +78,7 @@ class TodoList extends React.Component {
             key={item.id}
             className="list-group-item d-flex justify-content-between align-items-center"
           >
-            {item.text}
+            <a href={"?id=" + item.id}>{item.text}</a>
             <span className="badge badge-primary badge-pill">{item.id}</span>
           </li>
         ))}
