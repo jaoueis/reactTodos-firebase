@@ -58,8 +58,7 @@ class App extends React.Component {
         </div>
         <div className="add col-12 col-md-5 p-3 bg-light">
           <div className="form-wrap p-3 shadow-sm">
-            <h2>Add My Todos</h2>
-            
+            <h2>Add Your Todos</h2>            
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <input
