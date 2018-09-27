@@ -1,28 +1,28 @@
-[debug] [2018-09-25T20:03:00.562Z] ----------------------------------------------------------------------
-[debug] [2018-09-25T20:03:00.564Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Shan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-09-25T20:03:00.564Z] CLI Version:   4.2.1
-[debug] [2018-09-25T20:03:00.564Z] Platform:      win32
-[debug] [2018-09-25T20:03:00.564Z] Node Version:  v8.11.3
-[debug] [2018-09-25T20:03:00.565Z] Time:          Tue Sep 25 2018 16:03:00 GMT-0400 (Eastern Daylight Time)
-[debug] [2018-09-25T20:03:00.565Z] ----------------------------------------------------------------------
+[debug] [2018-09-27T19:02:02.504Z] ----------------------------------------------------------------------
+[debug] [2018-09-27T19:02:02.505Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Shan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-27T19:02:02.505Z] CLI Version:   4.2.1
+[debug] [2018-09-27T19:02:02.506Z] Platform:      win32
+[debug] [2018-09-27T19:02:02.506Z] Node Version:  v8.11.3
+[debug] [2018-09-27T19:02:02.506Z] Time:          Thu Sep 27 2018 15:02:02 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-27T19:02:02.506Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-09-25T20:03:00.572Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-09-25T20:03:00.572Z] > authorizing via signed-in user
-[debug] [2018-09-25T20:03:00.574Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-09-25T20:03:00.574Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2018-09-27T19:02:02.514Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-27T19:02:02.514Z] > authorizing via signed-in user
+[debug] [2018-09-27T19:02:02.515Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-27T19:02:02.516Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
 
-[debug] [2018-09-25T20:03:00.870Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-25T20:03:00.876Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/react-todo-list-38fd1  
+[debug] [2018-09-27T19:02:02.750Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-27T19:02:02.755Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/react-todo-list-38fd1  
  
-[debug] [2018-09-25T20:03:01.252Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-25T20:03:01.254Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/react-todo-list-38fd1  
+[debug] [2018-09-27T19:02:03.089Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-27T19:02:03.092Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/react-todo-list-38fd1  
  
-[debug] [2018-09-25T20:03:01.578Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-27T19:02:03.443Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\Shan\Desktop\to-do-list'...
 [info] 
-[debug] [2018-09-25T20:03:01.580Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/667715307593/clients/_:getWebAppConfig  
+[debug] [2018-09-27T19:02:03.444Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/667715307593/clients/_:getWebAppConfig  
  
-[debug] [2018-09-25T20:03:01.986Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-27T19:02:03.689Z] <<< HTTP RESPONSE 200
 [info] i  hosting[react-todo-list-38fd1]: Serving hosting files from: build
 [info] +  hosting[react-todo-list-38fd1]: Local server: http://localhost:5000

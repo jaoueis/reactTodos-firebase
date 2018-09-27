@@ -9,6 +9,45 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (!this.state.text.length) {
+      return;
+    } else {
+      const itemsRef = firebase.database().ref("items");
+      const newItem = {
+        text: this.state.text,
+        id: Date.now()
+      };
+      itemsRef.push(newItem);
+      this.setState(state => ({
+        items: state.items.concat(newItem),
+        text: ""
+      }));
+    }
+  }
+
+  componentDidMount() {
+    const itemsRef = firebase.database().ref("items");
+    itemsRef.on("value", snapshot => {
+      let items = snapshot.val();
+      let newState = [];
+      for (let item in items) {
+        newState.push({
+          id: items[item].id,
+          text: items[item].text
+        });
+      }
+      this.setState({
+        items: newState
+      });
+    });
+  }
+
   render() {
     return (
       <div className="todoListMain row">
@@ -44,28 +83,6 @@ class App extends React.Component {
         <div className="list col-12 col-md-6 p-3" />
       </div>
     );
-  }
-
-  handleChange(e) {
-    this.setState({ text: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    if (!this.state.text.length) {
-      return;
-    } else {
-      const itemsRef = firebase.database().ref("items");
-      const newItem = {
-        text: this.state.text,
-        id: Date.now()
-      };
-      itemsRef.push(newItem);
-      this.setState(state => ({
-        items: state.items.concat(newItem),
-        text: ""
-      }));
-    }
   }
 }
 

@@ -16,3 +16,4 @@
 - https://www.kirupa.com/react/simple_todo_app_react.htm 
 - https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b 
 - https://css-tricks.com/intro-firebase-react/
+- https://stackoverflow.com/questions/47760594/retrieving-data-from-firebase-child-object-in-react-native 
