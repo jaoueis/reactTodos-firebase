@@ -24,10 +24,6 @@ class App extends React.Component {
         id: Date.now()
       };
       itemsRef.push(newItem);
-      this.setState(state => ({
-        items: state.items.concat(newItem),
-        text: ""
-      }));
     }
   }
 
