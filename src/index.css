@@ -35,6 +35,7 @@ body {
     overflow-y: scroll;
 }
 
-.form-wrap, .list-wrap {
+.form-wrap,
+.list-wrap {
     background: white;
 }

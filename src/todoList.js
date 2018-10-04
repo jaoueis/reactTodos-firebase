@@ -54,17 +54,10 @@ class App extends React.Component {
         </div>
         <div className="add col-12 col-md-5 p-3 bg-light">
           <div className="form-wrap p-3 shadow-sm">
-            <h2>Add Your Todos</h2>            
+            <h2>Add Your Todos</h2>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Enter new task here..."
-                  id="new-todo"
-                  value={this.state.text}
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
+                <input type="text" placeholder="Enter new task here..." id="new-todo" value={this.state.text} onChange={this.handleChange} mclassName="form-control" />
               </div>
               <button type="submit" className="btn btn-dark">
                 Add Task #{this.state.items.length + 1}
@@ -87,10 +80,7 @@ class TodoList extends React.Component {
     return (
       <ul className="list-group list-group-flush">
         {this.props.items.map(item => (
-          <li
-            key={item.id}
-            className="list-group-item d-flex justify-content-between align-items-center"
-          >
+          <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
             <a href={"?id=" + item.id}>{item.text}</a>
             <span className="badge badge-primary badge-pill">{item.id}</span>
           </li>
