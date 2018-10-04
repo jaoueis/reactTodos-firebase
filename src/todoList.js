@@ -21,7 +21,8 @@ class App extends React.Component {
       const itemsRef = firebase.database().ref("items");
       const newItem = {
         text: this.state.text,
-        id: Date.now()
+        id: Date.now(),
+        status: "Initial"
       };
       itemsRef.push(newItem);
     }
@@ -49,7 +50,7 @@ class App extends React.Component {
       <div className="todoListMain row">
         <div className="header col-12 col-lg-1 text-center p-3">
           <h1>
-            <i className="fab fa-react" /> React Todo List
+            <a href="./"><i className="fab fa-react" /></a>React Todo List
           </h1>
         </div>
         <div className="add col-12 col-md-5 p-3 bg-light">
@@ -81,7 +82,7 @@ class TodoList extends React.Component {
       <ul className="list-group list-group-flush">
         {this.props.items.map(item => (
           <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <a href={"?id=" + item.id}>{item.text}</a>
+            <a href={"?details&id=" + item.id}>{item.text}</a>
             <span className="badge badge-primary badge-pill">{item.id}</span>
           </li>
         ))}
