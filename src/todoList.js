@@ -23,6 +23,7 @@ class App extends React.Component {
         text: this.state.text,
         id: Date.now(),
         status: "Initial"
+
       };
       itemsRef.push(newItem);
     }
@@ -58,7 +59,7 @@ class App extends React.Component {
             <h2>Add Your Todos</h2>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <input type="text" placeholder="Enter new task here..." id="new-todo" value={this.state.text} onChange={this.handleChange} mclassName="form-control" />
+                <input type="text" placeholder="Enter new task here..." id="new-todo" value={this.state.text} onChange={this.handleChange} className="form-control" />
               </div>
               <button type="submit" className="btn btn-dark">
                 Add Task #{this.state.items.length + 1}
@@ -70,7 +71,9 @@ class App extends React.Component {
             <TodoList items={this.state.items} />
           </div>
         </div>
-        <div className="list col-12 col-md-6 p-3" />
+        <div className="list col-12 col-md-6 p-3">
+          <TodoDetails />
+        </div>
       </div>
     );
   }
@@ -87,6 +90,21 @@ class TodoList extends React.Component {
           </li>
         ))}
       </ul>
+    );
+  }
+}
+
+class TodoDetails extends React.Component {
+  render() {
+    return (
+      <div className="p-3 shadow-sm">
+        <h2>Todo Details</h2>
+        <hr />
+        <h3>Todo Name</h3>
+        <span>Todo ID</span>
+        <br />
+        <span className="badge badge-primary badge-pill">Todo status</span>
+      </div>
     );
   }
 }
