@@ -23,9 +23,9 @@ class App extends React.Component {
         text: this.state.text,
         id: Date.now(),
         status: "Initial"
-
       };
       itemsRef.push(newItem);
+      this.setState({ text: '' });
     }
   }
 
@@ -83,12 +83,12 @@ class TodoList extends React.Component {
   render() {
     return (
       <ul className="list-group list-group-flush">
-        {this.props.items.map(item => (
+        {this.props.items.map((item) =>
           <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
             <a href={"?details&id=" + item.id}>{item.text}</a>
             <span className="badge badge-primary badge-pill">{item.id}</span>
           </li>
-        ))}
+        )}
       </ul>
     );
   }
