@@ -37,7 +37,8 @@ class App extends React.Component {
       for (let item in items) {
         newState.push({
           id: items[item].id,
-          text: items[item].text
+          text: items[item].text,
+          status: items[item].status
         });
       }
       this.setState({
@@ -80,13 +81,20 @@ class App extends React.Component {
 }
 
 class TodoList extends React.Component {
+  handleClick(e) {
+    e.preventDefault();
+    let tempID = e.currentTarget.innerHTML;
+    console.log(tempID);
+  }
+
   render() {
     return (
       <ul className="list-group list-group-flush">
         {this.props.items.map((item) =>
           <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <a href={"?details&id=" + item.id}>{item.text}</a>
+            <a href={"?details&id=" + item.id} onClick={this.handleClick}>{item.text}</a>
             <span className="badge badge-primary badge-pill">{item.id}</span>
+            <span className="badge badge-primary badge-pill">{item.status}</span>
           </li>
         )}
       </ul>
