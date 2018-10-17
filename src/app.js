@@ -1,23 +1,26 @@
 import React from "react";
 import firebase from "./firebase";
-import {TodoDetails} from './todoDetails';
-import {TodoList} from './todoList';
+import { TodoDetails } from './todoDetails';
+import { TodoList } from './todoList';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      items: [], 
+    this.state = {
+      items: [],
       text: "",
-      currentItem:{
-        text:'Todo Name',
-        id:'ID',
-        status:'Initial'
-      }
+      currentItem: {
+        text: 'Todo Name',
+        id: 'ID',
+        status: 'Initial'
+      },
+      newText: '',
+      newSatus: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loadToDoDetail = this.loadToDoDetail.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleChange(e) {
@@ -40,16 +43,31 @@ export default class App extends React.Component {
     }
   }
 
-  loadToDoDetail(currentID){
-    let selectedItem =this.state.currentItem;
-    this.state.items.forEach(function(current){
-      if(current.id==currentID){
+  handleEdit(e) {
+    const target = e.target;
+    if (target.name === 'editText'){
+      const name1 = target.name === 'editText';
+      const 
+    } 
+    const value1 = target.name.value;
+    const value2 = target.name.value;
+
+    this.setState({
+      newText: value1,
+      newStatus: value2
+    });
+  }
+
+  loadToDoDetail(currentID) {
+    let selectedItem = this.state.currentItem;
+    this.state.items.forEach(function (current) {
+      if (current.id == currentID) {
         selectedItem = current;
       }
     });
 
     this.setState({
-      currentItem:selectedItem
+      currentItem: selectedItem
     })
   }
   componentDidMount() {
@@ -92,11 +110,11 @@ export default class App extends React.Component {
           </div>
           <div className="list-wrap mt-3 p-3 shadow-sm">
             <h2>Your Todo List</h2>
-            <TodoList items={this.state.items} onChange={this.loadToDoDetail}/>
+            <TodoList items={this.state.items} onChange={this.loadToDoDetail} />
           </div>
         </div>
         <div className="list col-12 col-md-6 p-3">
-          <TodoDetails currentItem={this.state.currentItem}/>
+          <TodoDetails currentItem={this.state.currentItem} />
         </div>
       </div>
     );
