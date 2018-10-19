@@ -4,34 +4,26 @@ import firebase from "./firebase";
 export class TodoDetails extends React.Component {
   constructor() {
     super();
-    this.state = {
-      id: '',
-      newText: '',
-      newStatus: ''
-    };
-    this.handleEdit = this.handleEdit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
   }
 
-  handleEdit(e) {
-    this.setState({ [e.target.name]: e.target.value });
-    //console.log({ [e.target.name]: e.target.value });
-  }
-
   handleUpdate(e) {
-    console.log(this.state);
+    //console.log(this.state);
     e.preventDefault();
-    if (!this.state.id.length) {
-      return;
-    } else {
-      const itemsRef = firebase.database().ref(this.state.id);
-      const editItem = {
-        id: this.state.id,
-        text: this.state.newText,
-        status: this.state.newStatus
-      };
-      itemsRef.update(editItem);
-    }
+    let editID = document.querySelector('#editID');
+    let editText = document.querySelector('#editText');
+    let editStatus = document.querySelector('#editStatus');
+    //console.log(editID.value);
+    const itemsRef = firebase.database().ref("items").child(editID.value);
+    const editItem = {
+      id: editID.value,
+      text: editText.value,
+      status: editStatus.value
+    };
+    itemsRef.update(editItem);
+    editID.value = "";
+    editText.value = "";
+    editStatus.value = "";
   }
 
   render() {
@@ -42,11 +34,13 @@ export class TodoDetails extends React.Component {
         <h3>{this.props.currentItem.text}</h3>
         <span>{this.props.currentItem.id}</span>
         <br />
-        <span className="badge badge-primary badge-pill">{this.props.currentItem.status}</span>
+        <span className="badge badge-primary badge-pill">{this.props.currentItem.status}</span><br /><br />
+        <hr />
+        <h2>Edit Todo</h2>
         <form onSubmit={this.handleUpdate} className="form-group">
-          <input className="form-control" type="hidden" name="id" value={this.props.currentItem.id} readOnly onChange={this.handleEdit} /><br />
-          <input className="form-control" type="text" name="newText" onChange={this.handleEdit} /><br />
-          <select className="form-control" name="newStatus" onChange={this.handleEdit}>
+          <input className="form-control" type="hidden" name="id" id="editID" value={this.props.currentItem.id} readOnly /><br />
+          <input className="form-control" type="text" name="newText" id="editText" /><br />
+          <select className="form-control" name="newStatus" id="editStatus">
             <option value="initial">Initial</option>
             <option value="inProgress">In Progress</option>
             <option value="completed">Completed</option>

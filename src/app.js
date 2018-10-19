@@ -29,13 +29,13 @@ export default class App extends React.Component {
     if (!this.state.text.length) {
       return;
     } else {
-      const itemsRef = firebase.database().ref("items");
+      const itemsRef = firebase.database().ref("items").child(Date.now());
       const newItem = {
-        text: this.state.text,
         id: Date.now(),
+        text: this.state.text,
         status: "Initial"
       };
-      itemsRef.push(newItem);
+      itemsRef.set(newItem);
       this.setState({ text: '' });
     }
   }
