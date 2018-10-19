@@ -13,14 +13,11 @@ export default class App extends React.Component {
         text: 'Todo Name',
         id: 'ID',
         status: 'Initial'
-      },
-      newText: '',
-      newSatus: ''
+      }
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loadToDoDetail = this.loadToDoDetail.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleChange(e) {
@@ -41,21 +38,6 @@ export default class App extends React.Component {
       itemsRef.push(newItem);
       this.setState({ text: '' });
     }
-  }
-
-  handleEdit(e) {
-    const target = e.target;
-    if (target.name === 'editText'){
-      const name1 = target.name === 'editText';
-      const 
-    } 
-    const value1 = target.name.value;
-    const value2 = target.name.value;
-
-    this.setState({
-      newText: value1,
-      newStatus: value2
-    });
   }
 
   loadToDoDetail(currentID) {
@@ -101,7 +83,7 @@ export default class App extends React.Component {
             <h2>Add Your Todos</h2>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
-                <input type="text" placeholder="Enter new task here..." id="new-todo" value={this.state.text} onChange={this.handleChange} className="form-control" />
+                <input type="text" className="form-control" placeholder="Enter new task here..." id="new-todo" value={this.state.text} onChange={this.handleChange} />
               </div>
               <button type="submit" className="btn btn-dark">
                 Add Task #{this.state.items.length + 1}

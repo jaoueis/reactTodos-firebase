@@ -18,3 +18,4 @@
 - https://css-tricks.com/intro-firebase-react/
 - https://stackoverflow.com/questions/47760594/retrieving-data-from-firebase-child-object-in-react-native 
 - https://medium.com/@ruthmpardee/passing-data-between-react-components-103ad82ebd17 
+- https://medium.com/@tmkelly28/handling-multiple-form-inputs-in-react-c5eb83755d15
