@@ -39,3 +39,11 @@ body {
 .list-wrap {
     background: white;
 }
+
+.badge.badge-primary.badge-pill.In.Progress {
+    background: #ffc107;
+}
+
+.badge.badge-primary.badge-pill.Completed {
+    background: #28a745;
+}

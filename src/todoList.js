@@ -19,7 +19,7 @@ export class TodoList extends React.Component {
           <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
             <button className="btn btn-outline-secondary btn-sm" onClick={this.handleClick} data-id={item.id}>{item.text}</button>
             <span className="badge badge-primary badge-pill">{item.id}</span>
-            <span className="badge badge-primary badge-pill">{item.status}</span>
+            <span className={"badge badge-primary badge-pill " + item.status}>{item.status}</span>
           </li>
         )}
       </ul>
