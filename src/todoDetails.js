@@ -15,6 +15,7 @@ export class TodoDetails extends React.Component {
     let editStatus = document.querySelector('#editStatus');
     //console.log(editID.value);
     const itemsRef = firebase.database().ref("items").child(editID.value);
+    !editText.value.length ? editText.value = this.props.currentItem.text : editText.value
     const editItem = {
       id: editID.value,
       text: editText.value,
